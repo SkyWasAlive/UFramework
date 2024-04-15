@@ -41,7 +41,3 @@ For detailed documentation on how to use the SkyGames Unity Framework Package, p
 
 If you encounter any issues or have any questions about using the SkyGames Unity Framework Package, please don't hesitate to contact us at [joao.c.gouveia10@gmail.com](mailto:joao.c.gouveia10@gmail.com).
 
-## License
-
-This Unity framework package is provided for internal use only within SkyGames. For more information, please see the [LICENSE](/LICENSE.md) file.
-
