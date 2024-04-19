@@ -284,7 +284,6 @@ public class EventListnnerInspectorWindow : EditorWindow
             }
             GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
-            EditorGUILayout.EndVertical();
         }
     }
 
