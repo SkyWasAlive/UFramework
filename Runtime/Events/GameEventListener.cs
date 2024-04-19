@@ -7,7 +7,7 @@ namespace UFramework.GameEvents
     public class GameEventListener<T> : MonoBehaviour
     {
         public GameEvent<T> Event;
-        public UnityEvent Response;
+        public UnityEvent<T> Response;
 
         private void OnEnable()
         {
