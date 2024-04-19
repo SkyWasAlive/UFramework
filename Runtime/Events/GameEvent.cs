@@ -7,7 +7,7 @@ namespace UFramework.GameEvents
     [CreateAssetMenu(menuName = "SkyFramework/Events/Game Event",fileName = "New Game Event",order = 0)]
     public class GameEvent<T> : ScriptableObject
     {
-        private List<GameEventListener<T>> _listeners = new List<GameEventListener>();
+        private List<GameEventListener<T>> _listeners = new List<GameEventListener<T>>();
         
         public void Raise()
         {
