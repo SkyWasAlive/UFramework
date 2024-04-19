@@ -79,7 +79,14 @@ public class EventListnnerInspectorWindow : EditorWindow
         if (gameEvents.Length == 0)
         {
             GUILayout.Label("No Game Events found.");
-        }
+            GUILayout.BeginHorizontal();
+            GUILayout.FlexibleSpace(); 
+            if (GUILayout.Button("Create New Event", GUILayout.Width(150)))
+            {
+                CreateNewGameEvent();
+            }
+            GUILayout.EndHorizontal();
+            }
         else
         {
             for (int i = 0; i < gameEvents.Length; i++)
