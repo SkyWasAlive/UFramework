@@ -24,7 +24,7 @@ namespace UFramework.GameEvents
             Response.Invoke();
         }
 
-        public void OnEventRaised(T[] params)
+        public void OnEventRaised(T[] eventParameters)
         {
             Response.Invoke(params);
         }
