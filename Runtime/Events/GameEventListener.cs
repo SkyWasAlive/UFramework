@@ -21,7 +21,7 @@ namespace UFramework.GameEvents
 
         public void OnEventRaised()
         {
-            Response.Invoke(new T());
+            Response.Invoke(null);
         }
 
         public void OnEventRaised(T eventParameter)
