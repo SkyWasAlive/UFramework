@@ -79,14 +79,6 @@ public class EventListnnerInspectorWindow : EditorWindow
         if (gameEvents.Length == 0)
         {
             GUILayout.Label("No Game Events found.");
-            GUILayout.BeginHorizontal();
-            GUILayout.FlexibleSpace(); 
-            if (GUILayout.Button("Create New Event", GUILayout.Width(150)))
-            {
-                CreateNewGameEvent();
-            }
-            GUILayout.EndHorizontal();
-            }
         else
         {
             for (int i = 0; i < gameEvents.Length; i++)
@@ -281,6 +273,10 @@ public class EventListnnerInspectorWindow : EditorWindow
         else
         {
             GUILayout.Label("No Game Event Listeners found on this GameObject.");
+            if (GUILayout.Button("Add Event Listener", GUILayout.Width(150)))
+            {
+                gameObject.AddComponent<GameEventListener>();
+            }
         }
     }
 
