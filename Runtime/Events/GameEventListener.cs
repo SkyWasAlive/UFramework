@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 namespace UFramework.GameEvents
 {
+    [HideInInspector]
     public class GameEventListener : MonoBehaviour
     {
         public GameEvent Event;
