@@ -15,9 +15,9 @@ namespace UFramework.GameEvents
                 _listeners[i].OnEventRaised();
         }
 
-        public void Raise(T[] eventParameters){
+        public void Raise(T eventParameter){
             for(int i = _listeners.Count -1; i >= 0; i--)
-                _listeners[i].OnEventRaised(eventParameters);
+                _listeners[i].OnEventRaised(eventParameter);
         }
 
         public void RegisterListener(GameEventListener<T> listener)
