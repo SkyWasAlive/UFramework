@@ -4,9 +4,9 @@ using UnityEngine.Events;
 namespace UFramework.GameEvents
 {
     [HideInInspector]
-    public class GameEventListener : MonoBehaviour
+    public class GameEventListener<T> : MonoBehaviour
     {
-        public GameEvent Event;
+        public GameEvent<T> Event;
         public UnityEvent Response;
 
         private void OnEnable()
@@ -22,6 +22,11 @@ namespace UFramework.GameEvents
         public void OnEventRaised()
         {
             Response.Invoke();
+        }
+
+        public void OnEventRaised(T[] params)
+        {
+            Response.Invoke(params);
         }
     }
 }
