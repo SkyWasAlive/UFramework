@@ -20,12 +20,12 @@ namespace UFramework.GameEvents
                 _listeners[i].OnEventRaised(eventParameters);
         }
 
-        public void RegisterListener(GameEventListener listener)
+        public void RegisterListener(GameEventListener<T> listener)
         {
             _listeners.Add(listener);
         }
 
-        public void UnregisterListener(GameEventListener listener)
+        public void UnregisterListener(GameEventListener<T> listener)
         {
             _listeners.Remove(listener);
         }
