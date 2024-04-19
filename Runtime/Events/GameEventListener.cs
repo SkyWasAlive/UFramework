@@ -4,10 +4,10 @@ using UnityEngine.Events;
 namespace UFramework.GameEvents
 {
     [HideInInspector]
-    public class GameEventListener<T> : MonoBehaviour
+    public class GameEventListener : MonoBehaviour
     {
-        public GameEvent<T> Event;
-        public UnityEvent<T?> Response;
+        public GameEvent Event;
+        public UnityEvent Response;
 
         private void OnEnable()
         {
@@ -19,16 +19,9 @@ namespace UFramework.GameEvents
             Event.UnregisterListener(this);
         }
 
-/*
         public void OnEventRaised()
         {
             Response.Invoke();
-        }
-        */
-
-        public void OnEventRaised(T eventParameter)
-        {
-            Response.Invoke(eventParameter);
         }
     }
 }
