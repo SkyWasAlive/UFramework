@@ -19,10 +19,12 @@ namespace UFramework.GameEvents
             Event.UnregisterListener(this);
         }
 
+/*
         public void OnEventRaised()
         {
-            Response.Invoke(null);
+            Response.Invoke();
         }
+        */
 
         public void OnEventRaised(T eventParameter)
         {

@@ -12,7 +12,7 @@ namespace UFramework.GameEvents
         public void Raise()
         {
             for(int i = _listeners.Count -1; i >= 0; i--)
-                _listeners[i].OnEventRaised();
+                _listeners[i].OnEventRaised(null);
         }
 
         public void Raise(T eventParameter){
