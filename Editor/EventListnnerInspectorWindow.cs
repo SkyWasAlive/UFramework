@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UFramework.GameEvents;
 using UnityEditor;
 using UnityEngine;
 
@@ -287,7 +286,37 @@ public class EventListnnerInspectorWindow : EditorWindow
         }
     }
 
-    
+    [CustomPropertyDrawer(typeof(Argument))]
+    public class ArgumentDrawer : PropertyDrawer
+    {
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
+            EditorGUI.BeginProperty(position, label, property);
+
+            position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
+
+            // Calculate positions for each field
+            float twoWidth = position.width / 2f;
+            Rect nameRect = new Rect(position.x, position.y, twoWidth - 5f, position.height);
+            Rect typeRect = new Rect(position.x + twoWidth, position.y, twoWidth - 5f, position.height);
+
+            // Get the serialized properties for name, typeName, and parameter
+            SerializedProperty nameProp = property.FindPropertyRelative("name");
+            SerializedProperty typeNameProp = property.FindPropertyRelative("Type");
+
+            // Display the name, type, and parameter fields
+            EditorGUI.PropertyField(nameRect, nameProp, GUIContent.none);
+            EditorGUI.PropertyField(typeRect, typeNameProp, GUIContent.none);
+
+            EditorGUI.EndProperty();
+        }
+
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
+            // Calculate the total height required for all fields
+            return EditorGUIUtility.singleLineHeight;
+        }
+    }
 
     void OnSelectionChanged()
     {

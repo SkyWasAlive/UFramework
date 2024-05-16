@@ -1,27 +1,32 @@
+using System;
+using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace UFramework.GameEvents
+[Serializable]
+public class GameEventParameterized : UnityEvent< List<Argument>>{
+
+}
+
+[HideInInspector]
+public class GameEventListener : MonoBehaviour
 {
-    [HideInInspector]
-    public class GameEventListener : MonoBehaviour
+    public GameEvent Event;
+    public GameEventParameterized Response;
+
+    private void OnEnable()
     {
-        public GameEvent Event;
-        public UnityEvent Response;
+        Event.RegisterListener(this);
+    }
 
-        private void OnEnable()
-        {
-            Event.RegisterListener(this);
-        }
+    private void OnDisable()
+    {
+        Event.UnregisterListener(this);
+    }
 
-        private void OnDisable()
-        {
-            Event.UnregisterListener(this);
-        }
-
-        public void OnEventRaised()
-        {
-            Response.Invoke();
-        }
+    public void OnEventRaised( List<Argument> Arguments)
+    {
+        Response.Invoke(Arguments);
     }
 }
