@@ -1,6 +1,6 @@
 {
   "name": "pt.skygames.uframework",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "displayName": "UFramework",
   "description": "Core framework used in unity games by SkyGames",
   "unity": "2021.3",
